@@ -1,0 +1,6 @@
+# Auto normalize text files
+* text=auto
+
+# Keep binary files untouched (EAGLE/Altium files often are binary or sensitive)
+*.brd binary
+*.sch binary
