@@ -57,6 +57,10 @@ Future capability to log system events and state changes using a Real-Time Clock
 ### Optocoupler-Based Input/Output for Isolation
 
 ### Encrypted Communication 🔐 (Not implemented yet)
+
+## LED Board Config
+
+<img src = "https://github.com/user-attachments/assets/79bc1413-ae38-4d3c-a235-0f97a3f1d015" alt = " Led Baord" width = "550" />
  
 ## 🔁State Machine
 
@@ -74,8 +78,12 @@ Future capability to log system events and state changes using a Real-Time Clock
 
 <img src="https://github.com/user-attachments/assets/cbd41422-b215-4d06-ba9c-c9048b5bfddb" alt="abcde" width="450"/>
 
+# ICPS Header Connection between PCBs
 
-## ⬇️ Setup
+<img src = "https://github.com/user-attachments/assets/0a8ac665-38d4-499d-8407-6b0b2c7b17a0" alt = "Issues09" width = "850" />
+
+
+## ⬇️ Installation
 
 Download and Install STM32CubeIDE from https://www.st.com/en/development-tools/stm32cubeide.html
 
@@ -83,9 +91,26 @@ Download and Install Hercules from https://www.hw-group.com/software/hercules-se
 
 Download and Install Serial Debugger Assistant from https://apps.microsoft.com/detail/9nblggh43hdm?hl=en-US&gl=US
 
-# ICPS Header Connection between PCBs
+## Setup
 
+1) Download the zip or fork and then clone to a local directory
+2) Import the folder as a project in STM32CubeIde
+3) Plug the mcu using st-link v2 where,
 
+| MCU Pin (90° Bent)     | Corresponding Pin on ST Link V2 |
+|------------------------|-------------------|
+| 3V3 (90 Degree Bent)   | 3V3               |
+| GND (90 Degree Bent)   | GND               |
+| SWDIO (90 Degree Bent) | SWDIO             |
+| SCLK (90 Degree Bent)  | SCLK              |
+
+Like this,
+
+<img src = "https://github.com/user-attachments/assets/6aa676ae-48bd-4bf3-a9c6-0fe3224c9203" alt = "Config" width = "400" />
+
+Then, plug the usb type A of ST-LINK V2 to Computer.
+
+4) Press "Run" in the CubeIDE. Done!
 
 # PCB PROBLEMS / SOLUTIONS / CONCERNS
 
@@ -132,8 +157,6 @@ Download and Install Serial Debugger Assistant from https://apps.microsoft.com/d
 1) 1k ohm is connected to every signal end of mosfet used for powering RGB LED. Otherwise biasing issues emerge. To be fixed in the next iteration.
    
 <img src = "https://github.com/user-attachments/assets/e0832800-fdeb-43e0-9373-877852bd6c64" alt = "Issues09" width = "250" />
-
-
 
 2) Led that are powered by mcu directly should be equiped with less value resistor, lets say 100ohm. Applicable for Camera_Trigger, Payment and Ping LEDs.
 
