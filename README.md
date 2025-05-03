@@ -83,11 +83,15 @@ Download and Install Hercules from https://www.hw-group.com/software/hercules-se
 
 Download and Install Serial Debugger Assistant from https://apps.microsoft.com/detail/9nblggh43hdm?hl=en-US&gl=US
 
+# ICPS Header Connection between PCBs
+
+
+
 # PCB PROBLEMS / SOLUTIONS / CONCERNS
 
 2nd Iteration PCB is not finalized yet.
 
-### TOLL CONTROLLER UNIT
+## TOLL CONTROLLER UNIT
 
 1) SCLK And RST Connection from W5500 to MCU is manually swapped using wires. It should be fixed in next PCB design Iteration.
 2) TX and RX connection from both UARTs is manually swapped using wires. The ususal way is UART TX > MCU TX and UART RX > MCU RX. To be fixed in the nextIteration.
@@ -110,10 +114,29 @@ Download and Install Serial Debugger Assistant from https://apps.microsoft.com/d
 8) w5500 needs to be powered using a regulator from 5V to 3.3V. To be Fixed in next iteration.
 
 
-### RELAY BOARD
+## RELAY BOARD
+
+1) The resistor after 470 ohm should not be used. It should be kept open. To be fixed in the next iteration.
+2) A pullup of 10k is given from 12 volt to base of bc557 in such a way that it can be made 0V / 12V when needed. To be fixed in the next iteration.
 
 
-### LED BOARD
+<img src = "https://github.com/user-attachments/assets/d6837dff-edaf-43e1-b514-d727617b3e3b" alt = "Issues06" width = "250" />
+<img src = "https://github.com/user-attachments/assets/303b8c14-813f-426c-9fda-c4752f0b59b1" alt = "Issues07" width = "250" />
+
+3) Pulldown resistor is not given. Its not needed. To be fixed in the next iteration.
+
+<img src = "https://github.com/user-attachments/assets/b360efda-562d-43aa-a4d3-4d545c14fb79" alt= "Issues08" height = "180"/>
+
+## LED BOARD
+
+1) 1k ohm is connected to every signal end of mosfet used for powering RGB LED. Otherwise biasing issues emerge. To be fixed in the next iteration.
+   
+<img src = "https://github.com/user-attachments/assets/e0832800-fdeb-43e0-9373-877852bd6c64" alt = "Issues09" width = "250" />
+
+
+
+2) Led that are powered by mcu directly should be equiped with less value resistor, lets say 100ohm. Applicable for Camera_Trigger, Payment and Ping LEDs.
+
 
 # CODE PROBLEMS / SOLUTIONS / CONCERNS
 
