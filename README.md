@@ -83,7 +83,39 @@ Download and Install Hercules from https://www.hw-group.com/software/hercules-se
 
 Download and Install Serial Debugger Assistant from https://apps.microsoft.com/detail/9nblggh43hdm?hl=en-US&gl=US
 
-# PROBLEMS / SOLUTIONS / CONCERNS
+# PCB PROBLEMS / SOLUTIONS / CONCERNS
+
+2nd Iteration PCB is not finalized yet.
+
+### TOLL CONTROLLER UNIT
+
+1) SCLK And RST Connection from W5500 to MCU is manually swapped using wires. It should be fixed in next PCB design Iteration.
+2) TX and RX connection from both UARTs is manually swapped using wires. The ususal way is UART TX > MCU TX and UART RX > MCU RX. To be fixed in the nextIteration.
+
+<img src = "https://github.com/user-attachments/assets/da398707-2ad4-429b-a40c-ffc396205046" alt = "Issues" width="250"/>
+<img src = "https://github.com/user-attachments/assets/3f15256b-2000-42d6-bc8a-3bb45e6680ed" alt= "Issues01" width="320"/>
+
+3) Since less current flow at Input, 1k ohm resistors attached at all of the 4 inputs in replaced by wire (shorting). Now the optocoupler responses any voltage from 6V. To be fixed in next iteration.
+4) Voltage divider resistors are changed from 22k and 33k to 470 and 1k ohm for all inputs. It provides proper input to the mcu pins. To be fixed in next iteration.
+
+<img src = "https://github.com/user-attachments/assets/b5e3da6f-c96f-46ce-9648-941d9ffe55ad" alt = "Issues02" width = "330" />
+<img src = "https://github.com/user-attachments/assets/ba246bc0-5c29-4a2b-8899-34c18a818689" alt = "Issues03" width = "250" />
+
+5) All 470 ohm connected from MCU to Relay signal input side is manually shorted. This is done for proper signal sending. To be fixed in next iteration.
+6) Voltage divider resistors are changed from 22k and 33k to 33k and 100k for All UART RX. To be fixed in the next iteration.
+   
+<img src = "https://github.com/user-attachments/assets/a45c5864-0ab3-4efb-b142-26692c93332d" alt = "Issues04" width = "250" />
+<img src = "https://github.com/user-attachments/assets/067f82fc-a382-42a9-a5fb-f66cbc7cef8a" alt = "Issues05" width = "250" />
+
+8) w5500 needs to be powered using a regulator from 5V to 3.3V. To be Fixed in next iteration.
+
+
+### RELAY BOARD
+
+
+### LED BOARD
+
+# CODE PROBLEMS / SOLUTIONS / CONCERNS
 
 1) Individual Flags for sensor update should be implemented in next iteration. 
 
