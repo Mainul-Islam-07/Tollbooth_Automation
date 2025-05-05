@@ -164,7 +164,7 @@ Then, plug the usb type A of ST-LINK V2 to Computer.
 # CODE PROBLEMS / SOLUTIONS / CONCERNS
 
 1) Individual Flags for sensor update should be implemented in next iteration. 
-
+2) CMD_NO_COMMAND should replace CMD_RESET as default outcome from processcommand. 
 
 
 
