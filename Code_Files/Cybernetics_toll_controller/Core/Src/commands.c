@@ -52,7 +52,7 @@ PC_TO_MCU_Command_t getCommandID(const char *commandName) {
             return pcToMcuCommands[i].commandID;
         }
     }
-    return CMD_RESET;  // Default to CMD_RESET if command is unknown
+    return CMD_NOCOMMAND;  // Default to CMD_RESET if command is unknown
 }
 
 const char* getCommandName(MCU_TO_PC_Command_t commandID) {
