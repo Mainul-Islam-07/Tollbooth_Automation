@@ -48,6 +48,7 @@ typedef enum {
 	CMD_LANE_ON,
 	CMD_LANE_OFF,
 	CMD_HARD_RESET,
+	CMD_SHUT_DOWN,
 	CMD_NOCOMMAND
 } PC_TO_MCU_Command_t;
 

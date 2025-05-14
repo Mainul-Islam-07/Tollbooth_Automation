@@ -14,8 +14,10 @@ uint32_t connectTick = 0;
 uint32_t cameraTick = 0;
 uint32_t paidTick = 0;
 uint32_t laneTick = 0;
+uint32_t shutdowntick = 0;
 
 volatile bool once = true;
+volatile bool shutdowninit = false;
 // Individual state handlers
 State_t handle_idle(Event_t evt) {
 	once = true;
@@ -293,7 +295,7 @@ void connectionFeedback(void){
 		}
 }
 
-void manualLedTrig(uint8_t cmdID){
+void check_and_execute(uint8_t cmdID, State_t Current_State){
 	if (cmdID == CMD_CAMERA_TRIGGER && (LED_State(LED_CAMERA) == OFF)){
 		LED_Control(LED_CAMERA,ON);
 		cameraTick = HAL_GetTick();
@@ -327,11 +329,23 @@ void manualLedTrig(uint8_t cmdID){
 		}
 		NVIC_SystemReset();
 	}
+	if (cmdID == CMD_SHUT_DOWN)
+	{
+		shutdowntick = HAL_GetTick();
+		shutdowninit = true;
+	}
 
-
-
+	if (shutdowninit == true && HAL_GetTick() - shutdowntick >= 10000 && Current_State == STATE_IDLE)
+	{
+		HAL_Delay(10000);
+		Trigger_Control(TRIGGER_POWER, OFF);
+		HAL_Delay(10000);
+		shutdowninit = false;
+		NVIC_SystemReset();
+	}
 
 
 }
+
 
 

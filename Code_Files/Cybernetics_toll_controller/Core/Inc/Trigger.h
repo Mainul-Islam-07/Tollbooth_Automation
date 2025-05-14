@@ -18,6 +18,7 @@ typedef enum {
     TRIGGER_BOOM_BARRIER,
 	TRIGGER_LANE_OPERATION,
 	TRIGGER_OVERHEAD_LIGHT,
+	TRIGGER_POWER,
     TRIGGER_COUNT  // Keeps track of total output pins
 } Trigger_Pin_t;
 

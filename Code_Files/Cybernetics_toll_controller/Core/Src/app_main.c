@@ -66,8 +66,8 @@ void init(void){
 //	global.gpioWrite = gpioWrite;
 //
 //	global.gpioRead = gpioRead;
-
-
+	  HAL_Delay(500);
+      Trigger_Control(TRIGGER_POWER, ON);
 	  HAL_Delay(1000);
 	  startUartDMA(global.comm_uart);
 
@@ -79,6 +79,7 @@ void init(void){
 
 	  W5500_Init_Sockets();
 	  rtcInit();
+
 }
 
 
@@ -87,7 +88,7 @@ void loop(void){
 
 	W5500_Handle_Events();
     event = generate_event(&sensorSystem, currentCommand, currentState);
-    manualLedTrig(currentCommand);
+    check_and_execute(currentCommand, currentState);
     currentCommand = CMD_NOCOMMAND;
     updatePrevSensorState(&sensorSystem);
     run_state_machine(&currentState, event);

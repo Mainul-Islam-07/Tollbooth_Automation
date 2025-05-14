@@ -60,8 +60,6 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 #define LD2_Pin GPIO_PIN_13
 #define LD2_GPIO_Port GPIOC
-#define LED_PING_Pin GPIO_PIN_5
-#define LED_PING_GPIO_Port GPIOB
 #define W5500_RESET_Pin GPIO_PIN_4
 #define W5500_RESET_GPIO_Port GPIOA
 #define W5500_CS_Pin GPIO_PIN_0
@@ -69,6 +67,8 @@ void Error_Handler(void);
 #define W5500_INT_Pin GPIO_PIN_1
 #define W5500_INT_GPIO_Port GPIOB
 #define W5500_INT_EXTI_IRQn EXTI1_IRQn
+#define POWER_Pin GPIO_PIN_12
+#define POWER_GPIO_Port GPIOB
 #define LANE_OPERATION_Pin GPIO_PIN_13
 #define LANE_OPERATION_GPIO_Port GPIOB
 #define OVERHEAD_LIGHT_Pin GPIO_PIN_14
@@ -93,6 +93,8 @@ void Error_Handler(void);
 #define LED_CAMERA_GPIO_Port GPIOB
 #define LED_PAYMENT_Pin GPIO_PIN_4
 #define LED_PAYMENT_GPIO_Port GPIOB
+#define LED_PING_Pin GPIO_PIN_5
+#define LED_PING_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 

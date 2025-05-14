@@ -54,7 +54,7 @@ const char* state_to_str(State_t state);
 extern State_t currentState;
 
 void connectionFeedback(void);
-void manualLedTrig(uint8_t cmdID);
+void check_and_execute(uint8_t cmdID, State_t Current_State);
 void printState(const char* message);
 
 #endif /* INC_STATE_MACHINE_H_ */

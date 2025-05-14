@@ -42,6 +42,7 @@ Command_t pcToMcuCommands[] = {
 	{"LANE_ON", CMD_LANE_ON},
 	{"LANE_OFF", CMD_LANE_OFF},
     {"SIREN_OFF", CMD_OFF_SIREN},
+	{"PC_OFF", CMD_SHUT_DOWN},
 	{"HARD_RESET", CMD_HARD_RESET}
 };
 

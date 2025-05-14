@@ -12,6 +12,7 @@ const Switch_Config_t Trigger_Configs[TRIGGER_COUNT] = {
     {BOOM_BARRIER_GPIO_Port, BOOM_BARRIER_Pin},
     {LANE_OPERATION_GPIO_Port, LANE_OPERATION_Pin},
 	{OVERHEAD_LIGHT_GPIO_Port, OVERHEAD_LIGHT_Pin},
+	{POWER_GPIO_Port, POWER_Pin}
 };
 
 
