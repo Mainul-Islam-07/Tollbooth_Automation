@@ -148,9 +148,10 @@ Then, plug the usb type A of ST-LINK V2 to Computer.
 <img src = "https://github.com/user-attachments/assets/d6837dff-edaf-43e1-b514-d727617b3e3b" alt = "Issues06" width = "250" />
 <img src = "https://github.com/user-attachments/assets/303b8c14-813f-426c-9fda-c4752f0b59b1" alt = "Issues07" width = "250" />
 
-3) Pulldown resistor is not given. Its not needed. To be fixed in the next iteration.
+3) Pulldown resistor is given of 100k ohm resistors.
 
 <img src = "https://github.com/user-attachments/assets/b360efda-562d-43aa-a4d3-4d545c14fb79" alt= "Issues08" height = "180"/>
+
 
 ## LED BOARD
 
