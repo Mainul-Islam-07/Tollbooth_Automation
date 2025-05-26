@@ -82,6 +82,10 @@ Future capability to log system events and state changes using a Real-Time Clock
 
 <img src = "https://github.com/user-attachments/assets/0a8ac665-38d4-499d-8407-6b0b2c7b17a0" alt = "Issues09" width = "850" />
 
+# Relay Board Pinout
+![Relay Pinout](Docs/Pinout%20of%20Relays.drawio.png)
+
+
 
 ## ⬇️ Installation
 
